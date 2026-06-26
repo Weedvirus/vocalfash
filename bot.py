@@ -5,14 +5,15 @@ TOKEN = "8900156068:AAFR327w-I9Zruk7mw9Ev0trQnoIzgyIbLA"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "سلام 🎵\n"
-        "فعلاً نسخه آزمایشی بات فعال است.\n"
-        "برای جدا کردن وکال، فایل آهنگ را بفرست."
+        "سلام 🎵\nبات با موفقیت روشن شد!"
     )
 
-app = Application.builder().token(TOKEN).build()
+def main():
+    app = Application.builder().token(TOKEN).build()
+    app.add_handler(CommandHandler("start", start))
 
-app.add_handler(CommandHandler("start", start))
+    print("Bot Started...")
+    app.run_polling()
 
-print("Bot Started...")
-app.run_polling()
+if __name__ == "__main__":
+    main()
