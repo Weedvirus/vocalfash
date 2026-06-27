@@ -55,7 +55,7 @@ def main():
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(
-        MessageHandler(filters.AUDIO | filters.Document.AUDIO, handle_audio)
+    MessageHandler(filters.ALL, handle_audio)
     )
 
     print("Bot Started...")
