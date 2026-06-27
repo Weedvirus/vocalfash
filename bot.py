@@ -12,7 +12,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def handle_audio(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("⏳ در حال دانلود فایل...")
-
+async def handle_audio(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    print(update.message)
+    await update.message.reply_text("فایل دریافت شد ✅")
     audio = update.message.audio or update.message.document
 
     if not audio:
